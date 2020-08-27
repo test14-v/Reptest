@@ -1,0 +1,110 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.5",
+  "id": "ca9e26b7-dce5-44a0-b2b7-a70a3d65ce25",
+  "packageName": "com.github.teams",
+  "version": "1.0",
+  "name": {
+    "short": "GitHub (Preview)"
+  },
+  "developer": {
+    "name": "Microsoft Corporation",
+    "websiteUrl": "https://github.com",
+    "privacyUrl": "https://help.github.com/en/github/site-policy/github-privacy-statement",
+    "termsOfUseUrl": "https://github.com/integrations/slack/blob/master/docs/terms-and-conditions.md"
+  },
+  "description": {
+    "short": "GitHub integration with Microsoft Teams",
+    "full": "Monitor, plan, and collaborate on your GitHub code and work directly in Teams"
+  },
+  "icons": {
+    "outline": "github-small.png",
+    "color": "github-large.png"
+  },
+  "accentColor": "#1B1F23",
+  "composeExtensions": [
+    {
+      "botId": "ca9e26b7-dce5-44a0-b2b7-a70a3d65ce25",
+      "canUpdateConfiguration": true,
+      "commands": [
+      ],
+      "messageHandlers": [
+        {
+          "type": "link",
+          "value": {
+            "domains": [
+              "github.com"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bots": [
+    {
+      "botId": "ca9e26b7-dce5-44a0-b2b7-a70a3d65ce25",
+      "scopes": [
+        "team", "personal"
+      ],
+      "commandLists": [
+        {
+          "scopes": [
+            "team"
+          ],
+          "commands": [
+            {
+              "title": "subscribe",
+              "description": "Subscribe to notifications for a repository or an organization"
+            },
+            {
+              "title": "unsubscribe",
+              "description": "Unsubscribe from notifications for a repository or an organization"
+            },
+             {
+              "title": "subscribe list",
+              "description": "List all active subscriptions in this channel"
+            },
+			      {
+              "title": "subscribe list features",
+              "description": "List all active subscriptions with subscribed features"
+            },
+            {
+              "title": "help",
+              "description": "To learn more about @github"
+            },
+            {
+              "title": "signin",
+              "description": "Connect your GitHub account"
+            }
+          ]
+        },
+        {
+          "scopes": [
+            "personal"
+          ],
+          "commands": [
+            {
+              "title": "help",
+              "description": "List all supported commands"
+            },
+            {
+              "title": "signin",
+              "description": "Connect your GitHub account"
+            },
+            {
+              "title": "signout",
+              "description": "Signout from GitHub account"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "*.github.com"
+  ]
+}
